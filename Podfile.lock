@@ -63,6 +63,36 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.2.0):
     - GoogleUtilities/Logger
+  - KakaoSDK (2.3.2):
+    - KakaoSDKAuth (= 2.3.2)
+    - KakaoSDKCommon (= 2.3.2)
+    - KakaoSDKLink (= 2.3.2)
+    - KakaoSDKNavi (= 2.3.2)
+    - KakaoSDKStory (= 2.3.2)
+    - KakaoSDKTalk (= 2.3.2)
+    - KakaoSDKTemplate (= 2.3.2)
+    - KakaoSDKUser (= 2.3.2)
+  - KakaoSDKAuth (2.3.2):
+    - KakaoSDKCommon (= 2.3.2)
+  - KakaoSDKCommon (2.3.2):
+    - Alamofire (~> 5.1)
+  - KakaoSDKLink (2.3.2):
+    - KakaoSDKCommon (= 2.3.2)
+    - KakaoSDKTemplate (= 2.3.2)
+  - KakaoSDKNavi (2.3.2):
+    - KakaoSDKCommon (= 2.3.2)
+  - KakaoSDKStory (2.3.2):
+    - KakaoSDKAuth (= 2.3.2)
+    - KakaoSDKCommon (= 2.3.2)
+  - KakaoSDKTalk (2.3.2):
+    - KakaoSDKAuth (= 2.3.2)
+    - KakaoSDKCommon (= 2.3.2)
+    - KakaoSDKTemplate (= 2.3.2)
+  - KakaoSDKTemplate (2.3.2):
+    - KakaoSDKCommon (= 2.3.2)
+  - KakaoSDKUser (2.3.2):
+    - KakaoSDKAuth (= 2.3.2)
+    - KakaoSDKCommon (= 2.3.2)
   - leveldb-library (1.22)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
@@ -76,6 +106,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Firebase/Analytics
   - Firebase/Database
+  - KakaoSDK
   - NMapsMap
 
 SPEC REPOS:
@@ -90,6 +121,15 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
     - leveldb-library
     - nanopb
     - NMapsMap
@@ -106,11 +146,20 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 65a1071e5f52f63ab03d0a4d814a54fd762d885a
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
+  KakaoSDK: 04d9372a3060b6480f5726022317ed7aeccc34f4
+  KakaoSDKAuth: 8db7c7a0561b137477bb984bbdab2eeda7745d23
+  KakaoSDKCommon: 4bb3981337921686948b7be094590f2edec5df87
+  KakaoSDKLink: 084c39c8ec24ad902ae12c7f58ab5abee1a73e89
+  KakaoSDKNavi: f80311c7bc05f9acf72ad163fae850ddfb5b7807
+  KakaoSDKStory: 8d296191ed49af729308ac252148b041483b131a
+  KakaoSDKTalk: 29c318667d51bbc2b6271779167e4fddd8ecb598
+  KakaoSDKTemplate: 51a1d3f294f460be43b472a674eaf4f2ec2ac36a
+  KakaoSDKUser: e6c0017a41e87a94bdcd873d0178ad75be8126d4
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   NMapsMap: 2c092c6408c738774edea41e00f0fd1bad9e0ca9
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 1620dd49f8cea4de7f72a06b71abf1eb82fb40b9
+PODFILE CHECKSUM: 0ac0a5a05aa6b74846df929ebcaa082f334f8040
 
 COCOAPODS: 1.10.0
