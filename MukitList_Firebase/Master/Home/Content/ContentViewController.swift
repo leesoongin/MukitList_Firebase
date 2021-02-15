@@ -8,9 +8,19 @@
 import UIKit
 
 class ContentViewController: UIViewController {
-
+    let firebaseManager = FirebaseManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name("restaurantId"), object: nil)
+    }
+    //1. Firebase에서 해당하는 id에 있는 값들을 불러오기
+    //2. reviewViewModel에 data fetch
+    //3. collectionView에 뿌려주기
+    @objc func test(notification : NSNotification){
+        let id = "\((notification.userInfo!["id"])!)"
+        print("in test func id --> \(id)")
+        firebaseManager.loadReviewsInfo(id : id)
     }
 }
 
