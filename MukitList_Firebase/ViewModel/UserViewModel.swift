@@ -13,9 +13,10 @@ class UserManager{
     
     var user = User()
     
-    func fetchUserInfo(id : String, name : String, email : String){
-        self.user.fetchParameters(id: id, name: name, email: email)
+    func fetchUserInfo(id : String, name : String, profileImage : String){
+        self.user.fetchParameters(id: id, name: name, profileImage: profileImage)
     }
+    
 }
 
 
@@ -26,7 +27,7 @@ class UserViewModel { static let shared = UserViewModel()
         return manager.user
     }
     
-    func fetchUserInfo(id: String, name : String, email : String){
-        return manager.fetchUserInfo(id: id, name: name, email: email)
+    func fetchUserInfo(id: String, name : String, profileImage : String){
+        return manager.fetchUserInfo(id: id, name: name, profileImage: profileImage)
     }
 }
