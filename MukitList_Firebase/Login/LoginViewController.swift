@@ -13,7 +13,7 @@ import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     let userViewModel = UserViewModel()
-    let db = Database.database().reference()
+    let firebaseManager = FirebaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
             }
         }
     } //login
-    
     //유저정보 저장
     func saveUserInfo(){
         UserApi.shared.me() {(user, error) in
@@ -42,15 +41,10 @@ class LoginViewController: UIViewController {
             else {
                 self.userViewModel.fetchUserInfo(id: "\((user?.id)!)", name: (user?.kakaoAccount?.profile?.nickname)!, profileImage: "\((user?.kakaoAccount?.profile?.profileImageUrl)!)")
                 DispatchQueue.main.async {
-                    self.saveUserInfoInFirebase()
+                    self.firebaseManager.saveUserInfo(id: self.userViewModel.user.id, dict: self.userViewModel.user.toDictionary)
                 }
             }
         }
-    }
-    
-   //db에 유저정보 저장
-    func saveUserInfoInFirebase(){
-        db.child("User").child("id:\((userViewModel.user.id))").setValue(userViewModel.user.toDictionary)
     }
     
     func moveToHome(){

@@ -9,7 +9,8 @@ import UIKit
 import KakaoSDKAuth
 
 class LodingViewController: UIViewController {
-
+    let firebaseManager = FirebaseManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -10,6 +10,7 @@
 		254603578338CE980B37DF2C /* Pods_MukitList_Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */; };
 		A83F1DE325CFD85200351276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A83F1DE225CFD85200351276 /* GoogleService-Info.plist */; };
 		A8690FBE25D67E9A0089E3CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */; };
+		A86EB05525DA80E40044D870 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EB05425DA80E40044D870 /* FirebaseManager.swift */; };
 		A87CB79325D68445007AD9ED /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CB79225D68445007AD9ED /* Login.storyboard */; };
 		A87CB79B25D68E3C007AD9ED /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CB79A25D68E3C007AD9ED /* MasterViewController.swift */; };
 		A87CB7A425D68F77007AD9ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CB7A325D68F77007AD9ED /* HomeViewController.swift */; };
@@ -40,6 +41,7 @@
 		633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MukitList_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83F1DE225CFD85200351276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A86EB05425DA80E40044D870 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A87CB79225D68445007AD9ED /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A87CB79A25D68E3C007AD9ED /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A87CB7A325D68F77007AD9ED /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 				A87CB79225D68445007AD9ED /* Login.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		A86EB05325DA80C80044D870 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A86EB05425DA80E40044D870 /* FirebaseManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A87CB79925D68DFD007AD9ED /* Master */ = {
@@ -165,6 +175,7 @@
 		A89F5D3925CFD47A0099992A /* MukitList_Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				A86EB05325DA80C80044D870 /* Network */,
 				A8B7D23A25D1339F00BAB496 /* ViewModel */,
 				A8B7D23525D1320F00BAB496 /* Model */,
 				A882226E25D7E166006E3DAC /* Basic */,
@@ -367,6 +378,7 @@
 				A8B7D23C25D1340100BAB496 /* UserViewModel.swift in Sources */,
 				A882227025D7E181006E3DAC /* MapViewController.swift in Sources */,
 				A8D91EBE25D918D100139504 /* SearchCell.swift in Sources */,
+				A86EB05525DA80E40044D870 /* FirebaseManager.swift in Sources */,
 				A8690FBE25D67E9A0089E3CC /* LoginViewController.swift in Sources */,
 				A87CB7B025D69322007AD9ED /* MukitListViewController.swift in Sources */,
 				A8D91ECC25D933EA00139504 /* KeywordParameter.swift in Sources */,
