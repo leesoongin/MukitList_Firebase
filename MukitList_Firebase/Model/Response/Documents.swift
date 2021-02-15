@@ -13,7 +13,10 @@ struct Documents : Codable{
 
 struct Document : Codable {
     let place_name : String
+    let address_name : String
     let category_group_name : String
+    let category_group_code : String
+    let id : String
     let x : String
     let y : String
 }
