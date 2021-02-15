@@ -14,13 +14,10 @@ import KakaoSDKUser
 class LoginViewController: UIViewController {
     let userViewModel = UserViewModel()
     let db = Database.database().reference()
-    var nameStoragePath : String = ""
-    var emailStoragePath : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameStoragePath = "User/id/name"
-        emailStoragePath = "User/id/email"
+        
     }
     @IBAction func login(_ sender: Any) {
         if (AuthApi.isKakaoTalkLoginAvailable()) {
@@ -43,7 +40,7 @@ class LoginViewController: UIViewController {
                 print(error)
             }
             else {
-                self.userViewModel.fetchUserInfo(id: "\(user?.id)", name: (user?.kakaoAccount?.profile?.nickname)!, profileImage: "\(user?.kakaoAccount?.profile?.profileImageUrl)")
+                self.userViewModel.fetchUserInfo(id: "\((user?.id)!)", name: (user?.kakaoAccount?.profile?.nickname)!, profileImage: "\((user?.kakaoAccount?.profile?.profileImageUrl)!)")
                 DispatchQueue.main.async {
                     self.saveUserInfoInFirebase()
                 }
@@ -53,7 +50,7 @@ class LoginViewController: UIViewController {
     
    //db에 유저정보 저장
     func saveUserInfoInFirebase(){
-//        db.child("User").setValue(<#T##value: Any?##Any?#>)
+        db.child("User").child("id:\((userViewModel.user.id))").setValue(userViewModel.user.toDictionary)
     }
     
     func moveToHome(){
