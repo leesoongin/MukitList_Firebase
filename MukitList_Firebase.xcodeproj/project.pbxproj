@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		254603578338CE980B37DF2C /* Pods_MukitList_Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */; };
+		A83F1DE325CFD85200351276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A83F1DE225CFD85200351276 /* GoogleService-Info.plist */; };
+		A8690FBE25D67E9A0089E3CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */; };
+		A87CB79325D68445007AD9ED /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CB79225D68445007AD9ED /* Login.storyboard */; };
+		A87CB79B25D68E3C007AD9ED /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CB79A25D68E3C007AD9ED /* MasterViewController.swift */; };
+		A87CB7A425D68F77007AD9ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CB7A325D68F77007AD9ED /* HomeViewController.swift */; };
+		A87CB7A725D68F92007AD9ED /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CB7A625D68F92007AD9ED /* Home.storyboard */; };
+		A87CB7AC25D6924E007AD9ED /* Master.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CB7AB25D6924E007AD9ED /* Master.storyboard */; };
+		A87CB7B025D69322007AD9ED /* MukitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CB7AF25D69322007AD9ED /* MukitListViewController.swift */; };
+		A87CB7B425D6932D007AD9ED /* MukitList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87CB7B325D6932D007AD9ED /* MukitList.storyboard */; };
+		A882227025D7E181006E3DAC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A882226F25D7E181006E3DAC /* MapViewController.swift */; };
+		A882227425D7E19E006E3DAC /* Basic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A882227325D7E19E006E3DAC /* Basic.storyboard */; };
+		A89F5D3B25CFD47A0099992A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89F5D3A25CFD47A0099992A /* AppDelegate.swift */; };
+		A89F5D3D25CFD47A0099992A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89F5D3C25CFD47A0099992A /* SceneDelegate.swift */; };
+		A89F5D4425CFD47B0099992A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89F5D4325CFD47B0099992A /* Assets.xcassets */; };
+		A89F5D4725CFD47B0099992A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89F5D4525CFD47B0099992A /* LaunchScreen.storyboard */; };
+		A8B7D23725D1322100BAB496 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7D23625D1322100BAB496 /* User.swift */; };
+		A8B7D23C25D1340100BAB496 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7D23B25D1340100BAB496 /* UserViewModel.swift */; };
+		A8D3728F25D905C400287982 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D3728E25D905C400287982 /* SearchViewController.swift */; };
+		A8D3729325D905CE00287982 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D3729225D905CE00287982 /* Search.storyboard */; };
+		A8D91EBE25D918D100139504 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91EBD25D918D100139504 /* SearchCell.swift */; };
+		A8D91EC325D91B8200139504 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91EC225D91B8200139504 /* Documents.swift */; };
+		A8D91EC725D91C7600139504 /* KeywordSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91EC625D91C7600139504 /* KeywordSearchViewModel.swift */; };
+		A8D91ECC25D933EA00139504 /* KeywordParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91ECB25D933EA00139504 /* KeywordParameter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C0BF3CBD25ECFEF086DC01B /* Pods-MukitList_Firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MukitList_Firebase.debug.xcconfig"; path = "Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase.debug.xcconfig"; sourceTree = "<group>"; };
+		633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MukitList_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83F1DE225CFD85200351276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A87CB79225D68445007AD9ED /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A87CB79A25D68E3C007AD9ED /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A87CB7A325D68F77007AD9ED /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A87CB7A625D68F92007AD9ED /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		A87CB7AB25D6924E007AD9ED /* Master.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Master.storyboard; sourceTree = "<group>"; };
+		A87CB7AF25D69322007AD9ED /* MukitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MukitListViewController.swift; sourceTree = "<group>"; };
+		A87CB7B325D6932D007AD9ED /* MukitList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MukitList.storyboard; sourceTree = "<group>"; };
+		A882226F25D7E181006E3DAC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A882227325D7E19E006E3DAC /* Basic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Basic.storyboard; sourceTree = "<group>"; };
+		A89F5D3725CFD47A0099992A /* MukitList_Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MukitList_Firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A89F5D3A25CFD47A0099992A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A89F5D3C25CFD47A0099992A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A89F5D4325CFD47B0099992A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A89F5D4625CFD47B0099992A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A89F5D4825CFD47B0099992A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8B7D23625D1322100BAB496 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8B7D23B25D1340100BAB496 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A8D3728E25D905C400287982 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A8D3729225D905CE00287982 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		A8D91EBD25D918D100139504 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		A8D91EC225D91B8200139504 /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
+		A8D91EC625D91C7600139504 /* KeywordSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordSearchViewModel.swift; sourceTree = "<group>"; };
+		A8D91ECB25D933EA00139504 /* KeywordParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordParameter.swift; sourceTree = "<group>"; };
+		AF19B7C517F18471835FFA21 /* Pods-MukitList_Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MukitList_Firebase.release.xcconfig"; path = "Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A89F5D3425CFD47A0099992A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254603578338CE980B37DF2C /* Pods_MukitList_Firebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22FF9C9391FDE2F76BA7BD8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8690FBC25D67E760089E3CC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */,
+				A87CB79225D68445007AD9ED /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A87CB79925D68DFD007AD9ED /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				A87CB7A125D68EC7007AD9ED /* Home */,
+				A87CB7AE25D69305007AD9ED /* MukitList */,
+				A87CB79A25D68E3C007AD9ED /* MasterViewController.swift */,
+				A87CB7AB25D6924E007AD9ED /* Master.storyboard */,
+			);
+			path = Master;
+			sourceTree = "<group>";
+		};
+		A87CB7A125D68EC7007AD9ED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A87CB7A325D68F77007AD9ED /* HomeViewController.swift */,
+				A87CB7A625D68F92007AD9ED /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A87CB7AE25D69305007AD9ED /* MukitList */ = {
+			isa = PBXGroup;
+			children = (
+				A87CB7AF25D69322007AD9ED /* MukitListViewController.swift */,
+				A87CB7B325D6932D007AD9ED /* MukitList.storyboard */,
+			);
+			path = MukitList;
+			sourceTree = "<group>";
+		};
+		A882226E25D7E166006E3DAC /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				A882226F25D7E181006E3DAC /* MapViewController.swift */,
+				A882227325D7E19E006E3DAC /* Basic.storyboard */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		A89F5D2E25CFD47A0099992A = {
+			isa = PBXGroup;
+			children = (
+				A89F5D3925CFD47A0099992A /* MukitList_Firebase */,
+				A89F5D3825CFD47A0099992A /* Products */,
+				D1FE2F5DB31817B4ED8493A8 /* Pods */,
+				22FF9C9391FDE2F76BA7BD8F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A89F5D3825CFD47A0099992A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A89F5D3725CFD47A0099992A /* MukitList_Firebase.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A89F5D3925CFD47A0099992A /* MukitList_Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A8B7D23A25D1339F00BAB496 /* ViewModel */,
+				A8B7D23525D1320F00BAB496 /* Model */,
+				A882226E25D7E166006E3DAC /* Basic */,
+				A8690FBC25D67E760089E3CC /* Login */,
+				A87CB79925D68DFD007AD9ED /* Master */,
+				A8D3728D25D905AA00287982 /* Search */,
+				A89F5D3A25CFD47A0099992A /* AppDelegate.swift */,
+				A89F5D3C25CFD47A0099992A /* SceneDelegate.swift */,
+				A89F5D4325CFD47B0099992A /* Assets.xcassets */,
+				A89F5D4525CFD47B0099992A /* LaunchScreen.storyboard */,
+				A83F1DE225CFD85200351276 /* GoogleService-Info.plist */,
+				A89F5D4825CFD47B0099992A /* Info.plist */,
+			);
+			path = MukitList_Firebase;
+			sourceTree = "<group>";
+		};
+		A8B7D23525D1320F00BAB496 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8D91ECA25D933AD00139504 /* Request */,
+				A8D91EC125D91ABD00139504 /* Response */,
+				A8B7D23625D1322100BAB496 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8B7D23A25D1339F00BAB496 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8B7D23B25D1340100BAB496 /* UserViewModel.swift */,
+				A8D91EC625D91C7600139504 /* KeywordSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A8D3728D25D905AA00287982 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A8D3728E25D905C400287982 /* SearchViewController.swift */,
+				A8D91EBD25D918D100139504 /* SearchCell.swift */,
+				A8D3729225D905CE00287982 /* Search.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A8D91EC125D91ABD00139504 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A8D91EC225D91B8200139504 /* Documents.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		A8D91ECA25D933AD00139504 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A8D91ECB25D933EA00139504 /* KeywordParameter.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D1FE2F5DB31817B4ED8493A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C0BF3CBD25ECFEF086DC01B /* Pods-MukitList_Firebase.debug.xcconfig */,
+				AF19B7C517F18471835FFA21 /* Pods-MukitList_Firebase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A89F5D3625CFD47A0099992A /* MukitList_Firebase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A89F5D4B25CFD47B0099992A /* Build configuration list for PBXNativeTarget "MukitList_Firebase" */;
+			buildPhases = (
+				C26C32C0C61B83B5EBFD5A3B /* [CP] Check Pods Manifest.lock */,
+				A89F5D3325CFD47A0099992A /* Sources */,
+				A89F5D3425CFD47A0099992A /* Frameworks */,
+				A89F5D3525CFD47A0099992A /* Resources */,
+				B8C020746DD9DFCE810D8808 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MukitList_Firebase;
+			productName = MukitList_Firebase;
+			productReference = A89F5D3725CFD47A0099992A /* MukitList_Firebase.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A89F5D2F25CFD47A0099992A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					A89F5D3625CFD47A0099992A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = A89F5D3225CFD47A0099992A /* Build configuration list for PBXProject "MukitList_Firebase" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A89F5D2E25CFD47A0099992A;
+			productRefGroup = A89F5D3825CFD47A0099992A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A89F5D3625CFD47A0099992A /* MukitList_Firebase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A89F5D3525CFD47A0099992A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87CB7AC25D6924E007AD9ED /* Master.storyboard in Resources */,
+				A882227425D7E19E006E3DAC /* Basic.storyboard in Resources */,
+				A89F5D4725CFD47B0099992A /* LaunchScreen.storyboard in Resources */,
+				A83F1DE325CFD85200351276 /* GoogleService-Info.plist in Resources */,
+				A8D3729325D905CE00287982 /* Search.storyboard in Resources */,
+				A89F5D4425CFD47B0099992A /* Assets.xcassets in Resources */,
+				A87CB7B425D6932D007AD9ED /* MukitList.storyboard in Resources */,
+				A87CB7A725D68F92007AD9ED /* Home.storyboard in Resources */,
+				A87CB79325D68445007AD9ED /* Login.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8C020746DD9DFCE810D8808 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C26C32C0C61B83B5EBFD5A3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MukitList_Firebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A89F5D3325CFD47A0099992A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8D91EC725D91C7600139504 /* KeywordSearchViewModel.swift in Sources */,
+				A8D3728F25D905C400287982 /* SearchViewController.swift in Sources */,
+				A8B7D23725D1322100BAB496 /* User.swift in Sources */,
+				A89F5D3B25CFD47A0099992A /* AppDelegate.swift in Sources */,
+				A87CB79B25D68E3C007AD9ED /* MasterViewController.swift in Sources */,
+				A8D91EC325D91B8200139504 /* Documents.swift in Sources */,
+				A8B7D23C25D1340100BAB496 /* UserViewModel.swift in Sources */,
+				A882227025D7E181006E3DAC /* MapViewController.swift in Sources */,
+				A8D91EBE25D918D100139504 /* SearchCell.swift in Sources */,
+				A8690FBE25D67E9A0089E3CC /* LoginViewController.swift in Sources */,
+				A87CB7B025D69322007AD9ED /* MukitListViewController.swift in Sources */,
+				A8D91ECC25D933EA00139504 /* KeywordParameter.swift in Sources */,
+				A87CB7A425D68F77007AD9ED /* HomeViewController.swift in Sources */,
+				A89F5D3D25CFD47A0099992A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A89F5D4525CFD47B0099992A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A89F5D4625CFD47B0099992A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A89F5D4925CFD47B0099992A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A89F5D4A25CFD47B0099992A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A89F5D4C25CFD47B0099992A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C0BF3CBD25ECFEF086DC01B /* Pods-MukitList_Firebase.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7W64WHVKVN;
+				INFOPLIST_FILE = MukitList_Firebase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soongin.MukitList-Firebase-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A89F5D4D25CFD47B0099992A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF19B7C517F18471835FFA21 /* Pods-MukitList_Firebase.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7W64WHVKVN;
+				INFOPLIST_FILE = MukitList_Firebase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soongin.MukitList-Firebase-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A89F5D3225CFD47A0099992A /* Build configuration list for PBXProject "MukitList_Firebase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89F5D4925CFD47B0099992A /* Debug */,
+				A89F5D4A25CFD47B0099992A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A89F5D4B25CFD47B0099992A /* Build configuration list for PBXNativeTarget "MukitList_Firebase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89F5D4C25CFD47B0099992A /* Debug */,
+				A89F5D4D25CFD47B0099992A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A89F5D2F25CFD47A0099992A /* Project object */;
+}

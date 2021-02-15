@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0zS-cB-Hut">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Master View Controller-->
+        <scene sceneID="Sk5-nU-2ZH">
+            <objects>
+                <tabBarController storyboardIdentifier="Master" id="0zS-cB-Hut" customClass="MasterViewController" customModule="MukitList_Firebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jqf-j2-Kno">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="43n-Y5-3nq" kind="relationship" relationship="viewControllers" id="qlj-qD-Ilu"/>
+                        <segue destination="Wga-7s-Y2O" kind="relationship" relationship="viewControllers" id="3S5-3d-Aun"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cq3-W5-7Ya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-651" y="86"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="LKj-be-Zug">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="Home" id="43n-Y5-3nq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="pencil.circle" catalog="system" selectedImage="pencil.circle.fill" id="ceW-bg-pir"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UgS-0S-Ohz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-206"/>
+        </scene>
+        <!--MukitList-->
+        <scene sceneID="A5e-CB-brQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MukitList" referencedIdentifier="MukitList" id="Wga-7s-Y2O" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MukitList" image="square.and.arrow.up.on.square" catalog="system" selectedImage="square.and.arrow.up.on.square.fill" id="JO7-C5-Bk8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Da-E1-EOC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-121" y="377"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <image name="square.and.arrow.up.on.square.fill" catalog="system" width="117" height="128"/>
+    </resources>
+</document>

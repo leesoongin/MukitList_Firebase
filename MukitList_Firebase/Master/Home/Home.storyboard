@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ecy-NE-h08">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="dbL-JN-fEc">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="ecy-NE-h08" customClass="HomeViewController" customModule="MukitList_Firebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SsC-04-HcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCh-Ic-JCB" customClass="NMFNaverMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sU-ao-jaM">
+                                <rect key="frame" x="348" y="747" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="hDo-Fw-Xno"/>
+                                    <constraint firstAttribute="height" constant="50" id="s4f-lm-1tO"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchNearByRestaurants:" destination="ecy-NE-h08" eventType="touchUpInside" id="qKl-FN-pgP"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCe-uf-pCH" userLabel="view">
+                                <rect key="frame" x="0.0" y="52" width="414" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xM-aR-efg">
+                                        <rect key="frame" x="16" y="4" width="382" height="32"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="뭐 먹을까 ?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moveToSearchScene:" destination="ecy-NE-h08" eventType="touchUpInside" id="Y3g-QJ-SnM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1xM-aR-efg" secondAttribute="trailing" constant="16" id="43P-Gp-F9v"/>
+                                    <constraint firstAttribute="height" constant="40" id="WHH-tj-td6"/>
+                                    <constraint firstAttribute="bottom" secondItem="1xM-aR-efg" secondAttribute="bottom" constant="4" id="ZpW-81-8DR"/>
+                                    <constraint firstItem="1xM-aR-efg" firstAttribute="leading" secondItem="gCe-uf-pCH" secondAttribute="leading" constant="16" id="blR-py-Mg3"/>
+                                    <constraint firstItem="1xM-aR-efg" firstAttribute="top" secondItem="gCe-uf-pCH" secondAttribute="top" constant="4" id="yKl-Td-YoI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zQT-O7-3uv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zQT-O7-3uv" firstAttribute="trailing" secondItem="7sU-ao-jaM" secondAttribute="trailing" constant="16" id="52C-NJ-4re"/>
+                            <constraint firstItem="zQT-O7-3uv" firstAttribute="bottom" secondItem="hCh-Ic-JCB" secondAttribute="bottom" id="CNJ-4C-VSb"/>
+                            <constraint firstItem="hCh-Ic-JCB" firstAttribute="leading" secondItem="zQT-O7-3uv" secondAttribute="leading" id="D9g-zA-SJ1"/>
+                            <constraint firstItem="gCe-uf-pCH" firstAttribute="leading" secondItem="zQT-O7-3uv" secondAttribute="leading" id="JjB-81-gVC"/>
+                            <constraint firstItem="zQT-O7-3uv" firstAttribute="bottom" secondItem="7sU-ao-jaM" secondAttribute="bottom" constant="16" id="Khb-Hd-Tfu"/>
+                            <constraint firstItem="hCh-Ic-JCB" firstAttribute="top" secondItem="SsC-04-HcZ" secondAttribute="top" id="Q67-fe-1jZ"/>
+                            <constraint firstItem="zQT-O7-3uv" firstAttribute="trailing" secondItem="hCh-Ic-JCB" secondAttribute="trailing" id="uCg-pk-M8O"/>
+                            <constraint firstItem="zQT-O7-3uv" firstAttribute="trailing" secondItem="gCe-uf-pCH" secondAttribute="trailing" id="uYB-fX-ytl"/>
+                            <constraint firstItem="gCe-uf-pCH" firstAttribute="top" secondItem="zQT-O7-3uv" secondAttribute="top" constant="8" id="xym-Tq-txC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="pencil.circle" catalog="system" selectedImage="pencil.circle.fill" id="MD8-eB-lCi"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dummySearchBar" destination="1xM-aR-efg" id="KUS-mZ-nIG"/>
+                        <outlet property="naverMapView" destination="hCh-Ic-JCB" id="mcr-m5-w2c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQd-GK-So3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="383" y="-171"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
