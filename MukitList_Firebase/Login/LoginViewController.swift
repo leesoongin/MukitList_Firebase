@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import KakaoSDKAuth
+
 
 class LoginViewController: UIViewController {
     let userViewModel = UserViewModel()
@@ -14,40 +16,23 @@ class LoginViewController: UIViewController {
     var nameStoragePath : String = ""
     var emailStoragePath : String = ""
     
-    var id = ""
-    var name = ""
-    var email = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO : 임시 로그인 아이디 -> id, name, email
-        self.id = "1"
-        self.name = "soongmumu"
-        self.email = "tnddls2ek@naver.com"
-        
         nameStoragePath = "User/id/name"
         emailStoragePath = "User/id/email"
     }
     @IBAction func login(_ sender: Any) {
-        //TODO : if is유저정보
-        //TODO : false -> 디비에 저장, UserViewModel에 저장 -> 메인으로 화면이동
-        //TODO : true -> userViewModel에 저장 -> 메인으로 화면이동
-        db.child("User/id").observeSingleEvent(of: .value) { snapshot in
-            let value = snapshot.value as? Dictionary<String,String>
-            let name = value?["name"] ?? ""
-            //TODO : viewModel에 저장
-            //TODO : 화면이동
-            if self.name == name {
-                self.userViewModel.fetchUserInfo(id: self.id, name: self.name, email: self.email)
-                self.moveToHome()
-            }else{
-                self.db.child(self.nameStoragePath).setValue(self.name)
-                self.db.child(self.emailStoragePath).setValue(self.email)
-                self.userViewModel.fetchUserInfo(id: self.id, name: self.name, email: self.email)
-                self.moveToHome()
-            }//else
-        }//observe
-    }//login
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    self.moveToHome()
+                }
+            }
+        }
+    } //login
     
     func moveToHome(){
         let storyboard = UIStoryboard(name: "Master", bundle: nil)
@@ -56,3 +41,4 @@ class LoginViewController: UIViewController {
         self.present(vc!, animated: false, completion: nil)
     }
 }
+
