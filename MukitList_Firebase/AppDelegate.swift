@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
+        KakaoSDKCommon.initSDK(appKey: "041f60ea863c45619744cbf82907c715")
         return true
     }
 
