@@ -36,6 +36,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FloatingPanel (2.2.0)
   - GoogleAppMeasurement (7.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -106,6 +107,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Firebase/Analytics
   - Firebase/Database
+  - FloatingPanel
   - KakaoSDK
   - NMapsMap
 
@@ -118,6 +120,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
     - FirebaseInstallations
+    - FloatingPanel
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -143,6 +146,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 35685db68b11fe7d19d2d8b557fd7e3a56ac81cc
   FirebaseDatabase: ee59c5f39e49dfa6c06af6f4e541a88d9271625a
   FirebaseInstallations: a46ae59915f0931e18814164849cd0354bea24ed
+  FloatingPanel: 54b478292da5340317ce78afcaca88fab6f3b57e
   GoogleAppMeasurement: 65a1071e5f52f63ab03d0a4d814a54fd762d885a
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
@@ -160,6 +164,6 @@ SPEC CHECKSUMS:
   NMapsMap: 2c092c6408c738774edea41e00f0fd1bad9e0ca9
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 0ac0a5a05aa6b74846df929ebcaa082f334f8040
+PODFILE CHECKSUM: e303ff17a3fb596b394110fce29677cf9276d5ab
 
 COCOAPODS: 1.10.0

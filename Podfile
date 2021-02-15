@@ -11,6 +11,7 @@ pod 'Firebase/Database'
 pod 'Alamofire', '~> 5.2'
 pod 'NMapsMap'
 pod 'KakaoSDK'
+pod 'FloatingPanel'
 # add pods for any other desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
 

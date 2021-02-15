@@ -7,6 +7,7 @@
 
 import UIKit
 import NMapsMap
+import FloatingPanel
 
 class HomeViewController: MapViewController {
     var locationManager = CLLocationManager()
@@ -23,6 +24,7 @@ class HomeViewController: MapViewController {
             locationManager.requestAlwaysAuthorization()
         }
         initView()
+        addFloatingPanel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,5 +93,19 @@ class HomeViewController: MapViewController {
               print("GPS: Default")
             return false
         }
+    }
+}
+
+extension HomeViewController : FloatingPanelControllerDelegate {
+    func addFloatingPanel() {
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        
+        let storyboard = UIStoryboard(name: "Content", bundle: nil)
+        guard let contentVC = storyboard.instantiateInitialViewController() as? NavigationViewController else{
+            return
+        }
+        fpc.set(contentViewController: contentVC)
+        fpc.addPanel(toParent: self)
     }
 }
