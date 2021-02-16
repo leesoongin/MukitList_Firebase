@@ -15,13 +15,13 @@ class FirebaseManager {
         db.child("User").child("id2:\((id))").setValue(dict)
     }
     
-    func loadReviewsInfo(id : String){
+    func loadReviewsInfo(id : String, completion : @escaping ([Review]) -> (Void)){
         db.child("Review").child(id).observeSingleEvent(of: .value) { snapshot in
             do{
                 let jsonData = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
                 let json = try JSONDecoder().decode([Review].self, from: jsonData)
                 
-                print("data --> \(json)")
+                completion(json)
             }catch let error{
                 print("parsed error --> \(error.localizedDescription)")
             }

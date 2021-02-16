@@ -94,6 +94,9 @@ PODS:
   - KakaoSDKUser (2.3.2):
     - KakaoSDKAuth (= 2.3.2)
     - KakaoSDKCommon (= 2.3.2)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
   - leveldb-library (1.22)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
@@ -109,6 +112,7 @@ DEPENDENCIES:
   - Firebase/Database
   - FloatingPanel
   - KakaoSDK
+  - Kingfisher (~> 5.0)
   - NMapsMap
 
 SPEC REPOS:
@@ -133,6 +137,7 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - Kingfisher
     - leveldb-library
     - nanopb
     - NMapsMap
@@ -159,11 +164,12 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: 29c318667d51bbc2b6271779167e4fddd8ecb598
   KakaoSDKTemplate: 51a1d3f294f460be43b472a674eaf4f2ec2ac36a
   KakaoSDKUser: e6c0017a41e87a94bdcd873d0178ad75be8126d4
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   NMapsMap: 2c092c6408c738774edea41e00f0fd1bad9e0ca9
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: e303ff17a3fb596b394110fce29677cf9276d5ab
+PODFILE CHECKSUM: 1631f9285d064e641aea23c5dc97d35c58cd474b
 
 COCOAPODS: 1.10.0
