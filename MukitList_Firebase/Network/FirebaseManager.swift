@@ -17,6 +17,12 @@ class FirebaseManager {
     
     func loadReviewsInfo(id : String, completion : @escaping ([Review]) -> (Void)){
         db.child("Review").child(id).observeSingleEvent(of: .value) { snapshot in
+            if snapshot.childrenCount == 0 {
+                //데이터가 없으면 해야할 행동
+                print("don't have review data")
+                completion([])
+                return
+            }
             do{
                 let jsonData = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
                 let json = try JSONDecoder().decode([Review].self, from: jsonData)
