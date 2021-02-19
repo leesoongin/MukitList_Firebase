@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		254603578338CE980B37DF2C /* Pods_MukitList_Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */; };
+		A821069225DCED8700EB7DDA /* MukitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821069125DCED8700EB7DDA /* MukitListViewModel.swift */; };
+		A821069525DCF19000EB7DDA /* MukitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821069425DCF19000EB7DDA /* MukitCell.swift */; };
 		A83F1DE325CFD85200351276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A83F1DE225CFD85200351276 /* GoogleService-Info.plist */; };
 		A8690FBE25D67E9A0089E3CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */; };
 		A86EB05525DA80E40044D870 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EB05425DA80E40044D870 /* FirebaseManager.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		2C0BF3CBD25ECFEF086DC01B /* Pods-MukitList_Firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MukitList_Firebase.debug.xcconfig"; path = "Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase.debug.xcconfig"; sourceTree = "<group>"; };
 		633C9FAC31CBC573DA6F7C00 /* Pods_MukitList_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MukitList_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A821069125DCED8700EB7DDA /* MukitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MukitListViewModel.swift; sourceTree = "<group>"; };
+		A821069425DCF19000EB7DDA /* MukitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MukitCell.swift; sourceTree = "<group>"; };
 		A83F1DE225CFD85200351276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8690FBD25D67E9A0089E3CC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A86EB05425DA80E40044D870 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				A87CB7AF25D69322007AD9ED /* MukitListViewController.swift */,
+				A821069425DCF19000EB7DDA /* MukitCell.swift */,
 				A87CB7B325D6932D007AD9ED /* MukitList.storyboard */,
 			);
 			path = MukitList;
@@ -234,6 +239,7 @@
 				A8B7D23B25D1340100BAB496 /* UserViewModel.swift */,
 				A86EB08425DA94EA0044D870 /* ReviewViewModel.swift */,
 				A8D91EC625D91C7600139504 /* KeywordSearchViewModel.swift */,
+				A821069125DCED8700EB7DDA /* MukitListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,9 +401,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A821069525DCF19000EB7DDA /* MukitCell.swift in Sources */,
 				A8D91EC725D91C7600139504 /* KeywordSearchViewModel.swift in Sources */,
 				A898471225DA71110026B498 /* LodingViewController.swift in Sources */,
 				A86EB07425DA892E0044D870 /* ContentViewController.swift in Sources */,
+				A821069225DCED8700EB7DDA /* MukitListViewModel.swift in Sources */,
 				A8D3728F25D905C400287982 /* SearchViewController.swift in Sources */,
 				A8B7D23725D1322100BAB496 /* User.swift in Sources */,
 				A86EB08225DA938F0044D870 /* Review.swift in Sources */,

@@ -11,23 +11,43 @@ import Kingfisher
 class ContentViewController: UIViewController {
     let firebaseManager = FirebaseManager()
     let reviewViewModel = ReviewViewModel()
+    let userViewModel = UserViewModel()
+    let mukitListViewModel = MukitListViewModel.shared
     
     @IBOutlet weak var collectionView: UICollectionView!
+
+    var document : Document!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(loadReviews), name: NSNotification.Name("restaurantId"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadReviewsFromFirebase), name: NSNotification.Name("restaurantId"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchDocument), name: NSNotification.Name("restaurantId"), object: nil)
     }
     //1. Firebase에서 해당하는 id에 있는 값들을 불러오기
     //2. reviewViewModel에 data fetch
     //3. collectionView에 뿌려주기
-    @objc func loadReviews(notification : NSNotification){
-        let id = "\((notification.userInfo!["id"])!)"
-        firebaseManager.loadReviewsInfo(id: id) { response in
+    @objc func loadReviewsFromFirebase(notification : NSNotification){
+        //any type -> Document 형변환안하면 못쓴다 !!
+        let document = (notification.userInfo!["document"])! as! Document
+    
+        firebaseManager.loadReviewsInfo(id: document.id) { response in
             self.reviewViewModel.fetchReviews(reviews: response)
             self.collectionView.reloadData()
         }
     }
+    
+    @objc func fetchDocument(notification : NSNotification){
+        self.document = (notification.userInfo!["document"])! as? Document
+    }
+    
+    @IBAction func saveMukitListToFirebase(_ sender: Any) {
+        //먹킷리스트에 추가 하기 기능 추가
+        firebaseManager.saveMukitList(id : userViewModel.user.id, document : self.document)
+        firebaseManager.loadMukitList(id: userViewModel.user.id) { response in
+            //받아온 데이터 MukitListViewModel에 저장하고 화면에 뿌리기
+        }
+    }
+    
 }
 
 extension ContentViewController : UICollectionViewDataSource {
@@ -40,8 +60,9 @@ extension ContentViewController : UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let url = URL(string: reviewViewModel.reviews[indexPath.row].reviewPhoto)!
         
+        //리펙토링할때 프로토콜 상속으로 코드 중복 줄여보자.. 
+        let url = URL(string: reviewViewModel.reviews[indexPath.row].reviewPhoto)!
         cell.imageView.kf.setImage(with: url)
         cell.titleLabel.text = reviewViewModel.reviews[indexPath.row].title
         cell.writerLabel.text = reviewViewModel.reviews[indexPath.row].writer

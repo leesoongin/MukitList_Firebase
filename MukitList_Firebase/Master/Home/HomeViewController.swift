@@ -64,7 +64,7 @@ class HomeViewController: MapViewController {
                 //TODO : 해당 가게에 대한 리뷰리스트 띄워보자 floating panel에
                 //1.  Notification center를 이용해 패널에 음식점id전송
                 //2. contentViewController에서 해당 음식점id에 존재하는 리뷰리스트를 읽어와 collectionView에 뿌리기
-                NotificationCenter.default.post(name: Notification.Name("restaurantId"), object: nil, userInfo: ["id":item.id])
+                NotificationCenter.default.post(name: Notification.Name("restaurantId"), object: nil, userInfo: ["document":item])
                 return true
             }
             marker.mapView = mapView

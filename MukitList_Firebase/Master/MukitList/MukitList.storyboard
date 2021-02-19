@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,22 +18,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bO4-62-ZMi">
-                                <rect key="frame" x="193.5" y="437.5" width="27.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-aV-XHJ" customClass="NMFNaverMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7gu-aV-XHJ" secondAttribute="height" multiplier="1:1" id="580-Cj-lyG"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hGS-Qg-ZXF">
+                                <rect key="frame" x="0.0" y="414" width="414" height="399"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iev-dt-oBn">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mukitCell" id="SrY-se-hYz" customClass="MukitCell" customModule="MukitList_Firebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FyQ-JP-Gqs">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBO-2U-m1i">
+                                                    <rect key="frame" x="43" y="53.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JBO-2U-m1i" firstAttribute="centerY" secondItem="FyQ-JP-Gqs" secondAttribute="centerY" id="LFK-YE-ZMh"/>
+                                                <constraint firstItem="JBO-2U-m1i" firstAttribute="centerX" secondItem="FyQ-JP-Gqs" secondAttribute="centerX" id="MrF-4I-vy1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="y8L-zO-Ktf" id="miu-SO-YvM"/>
+                                    <outlet property="delegate" destination="y8L-zO-Ktf" id="qI3-cJ-6KF"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQ2-PP-ReF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bO4-62-ZMi" firstAttribute="centerX" secondItem="Kby-uh-M8i" secondAttribute="centerX" id="K3T-AF-lkW"/>
-                            <constraint firstItem="bO4-62-ZMi" firstAttribute="centerY" secondItem="Kby-uh-M8i" secondAttribute="centerY" id="YCg-VI-Lut"/>
+                            <constraint firstItem="fQ2-PP-ReF" firstAttribute="bottom" secondItem="hGS-Qg-ZXF" secondAttribute="bottom" id="8X4-Ar-Hd1"/>
+                            <constraint firstItem="fQ2-PP-ReF" firstAttribute="trailing" secondItem="hGS-Qg-ZXF" secondAttribute="trailing" id="QZb-A5-bJm"/>
+                            <constraint firstItem="hGS-Qg-ZXF" firstAttribute="top" secondItem="7gu-aV-XHJ" secondAttribute="bottom" id="RFd-Ak-OGP"/>
+                            <constraint firstItem="hGS-Qg-ZXF" firstAttribute="leading" secondItem="fQ2-PP-ReF" secondAttribute="leading" id="Ur3-BH-iQh"/>
+                            <constraint firstItem="fQ2-PP-ReF" firstAttribute="trailing" secondItem="7gu-aV-XHJ" secondAttribute="trailing" id="XFc-jw-rYo"/>
+                            <constraint firstItem="7gu-aV-XHJ" firstAttribute="leading" secondItem="fQ2-PP-ReF" secondAttribute="leading" id="gEK-cH-gge"/>
+                            <constraint firstItem="7gu-aV-XHJ" firstAttribute="top" secondItem="Kby-uh-M8i" secondAttribute="top" id="rQx-jY-xgN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MukitList" image="square.and.arrow.up.on.square" catalog="system" selectedImage="square.and.arrow.up.on.square.fill" id="Jpz-LC-jSM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="naverMapView" destination="7gu-aV-XHJ" id="8aA-Ae-9Q6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buY-G8-awF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,6 +90,9 @@
         <image name="square.and.arrow.up.on.square.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
