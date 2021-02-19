@@ -7,6 +7,7 @@
 
 import UIKit
 import NMapsMap
+import FloatingPanel
 
 class HomeViewController: MapViewController {
     var locationManager = CLLocationManager()
@@ -23,6 +24,7 @@ class HomeViewController: MapViewController {
             locationManager.requestAlwaysAuthorization()
         }
         initView()
+        addFloatingPanel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +62,9 @@ class HomeViewController: MapViewController {
             marker.captionText = item.place_name
             marker.touchHandler = { overlay in
                 //TODO : 해당 가게에 대한 리뷰리스트 띄워보자 floating panel에
+                //1.  Notification center를 이용해 패널에 음식점id전송
+                //2. contentViewController에서 해당 음식점id에 존재하는 리뷰리스트를 읽어와 collectionView에 뿌리기
+                NotificationCenter.default.post(name: Notification.Name("restaurantId"), object: nil, userInfo: ["document":item])
                 return true
             }
             marker.mapView = mapView
@@ -91,5 +96,19 @@ class HomeViewController: MapViewController {
               print("GPS: Default")
             return false
         }
+    }
+}
+
+extension HomeViewController : FloatingPanelControllerDelegate {
+    func addFloatingPanel() {
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        
+        let storyboard = UIStoryboard(name: "Content", bundle: nil)
+        guard let contentVC = storyboard.instantiateInitialViewController() as? NavigationViewController else{
+            return
+        }
+        fpc.set(contentViewController: contentVC)
+        fpc.addPanel(toParent: self)
     }
 }
