@@ -59,22 +59,41 @@
                                     <constraint firstAttribute="height" constant="128" id="xPd-2x-E32"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yez-Zr-gVZ">
+                                <rect key="frame" x="168" y="462" width="78" height="30"/>
+                                <state key="normal" title="사진추가하기"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="eJ7-RL-Kw8" eventType="touchUpInside" id="0Gg-HA-ZAw"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SxX-tI-emi">
+                                <rect key="frame" x="87" y="507" width="240" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="3UT-82-h7g"/>
+                                    <constraint firstAttribute="width" constant="240" id="yVJ-OM-QSv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nQw-Yb-5Tm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SxX-tI-emi" firstAttribute="top" secondItem="yez-Zr-gVZ" secondAttribute="bottom" constant="16" id="6gq-wF-sg8"/>
                             <constraint firstItem="WHY-0e-wg9" firstAttribute="top" secondItem="r4Q-MQ-mao" secondAttribute="bottom" constant="100" id="HEP-ZZ-g4K"/>
                             <constraint firstItem="r4Q-MQ-mao" firstAttribute="centerX" secondItem="wNb-fB-ldU" secondAttribute="centerX" id="JDy-Tq-7D9"/>
+                            <constraint firstItem="SxX-tI-emi" firstAttribute="centerX" secondItem="wNb-fB-ldU" secondAttribute="centerX" id="URc-YX-YsE"/>
                             <constraint firstItem="4Wl-PL-8P7" firstAttribute="top" secondItem="wNb-fB-ldU" secondAttribute="top" id="aO7-R0-pHY"/>
                             <constraint firstItem="r4Q-MQ-mao" firstAttribute="top" secondItem="NU3-Sz-EX9" secondAttribute="bottom" constant="100" id="bPA-zs-n3s"/>
                             <constraint firstItem="nQw-Yb-5Tm" firstAttribute="trailing" secondItem="4Wl-PL-8P7" secondAttribute="trailing" id="biM-SI-uJP"/>
+                            <constraint firstItem="yez-Zr-gVZ" firstAttribute="top" secondItem="WHY-0e-wg9" secondAttribute="bottom" constant="16" id="cIR-Uo-gCg"/>
                             <constraint firstItem="NU3-Sz-EX9" firstAttribute="top" secondItem="4Wl-PL-8P7" secondAttribute="bottom" constant="16" id="eCj-EQ-Rib"/>
                             <constraint firstItem="WHY-0e-wg9" firstAttribute="centerX" secondItem="wNb-fB-ldU" secondAttribute="centerX" id="kBN-3Y-ng4"/>
                             <constraint firstItem="4Wl-PL-8P7" firstAttribute="leading" secondItem="nQw-Yb-5Tm" secondAttribute="leading" id="n8h-w4-ahU"/>
+                            <constraint firstItem="yez-Zr-gVZ" firstAttribute="centerX" secondItem="wNb-fB-ldU" secondAttribute="centerX" id="nyq-H6-oi3"/>
                             <constraint firstItem="NU3-Sz-EX9" firstAttribute="centerX" secondItem="wNb-fB-ldU" secondAttribute="centerX" id="zzB-CC-TEW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="SxX-tI-emi" id="nBw-X6-M6z"/>
                         <outlet property="photoLabel" destination="WHY-0e-wg9" id="ZRc-Ec-7p3"/>
                         <outlet property="priceLabel" destination="r4Q-MQ-mao" id="Wsr-Jy-YkP"/>
                         <outlet property="titleLabel" destination="NU3-Sz-EX9" id="K91-En-aRa"/>
@@ -86,6 +105,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
