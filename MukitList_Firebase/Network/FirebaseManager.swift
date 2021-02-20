@@ -35,13 +35,11 @@ class FirebaseManager {
         }
     }
     //리뷰정보 저장
-    func saveReviewsInfo(id : String){
-        //인자로 review 구성 정보 받아와서 띄우기. !! 일단은 임시변수
-        let review = Review(reviewPhoto: "https://i.esdrop.com/d/KPfCYxMNxg.png", title: "Title", writer: "writer", price: "20,000")
-        
+    func saveReviewsInfo(id : String,review : Review, completion : @escaping (Bool) -> (Void)){
         guard let key = db.child("Review").child(id).childByAutoId().key else { return }
         let childUpdates = ["/Review/\(id)/\(key)": review.toDictionary]
         db.updateChildValues(childUpdates)
+        completion(true)
     }
     //리뷰정보 불러오기
     func loadReviewsInfo(id : String, completion : @escaping ([Review]) -> (Void)){

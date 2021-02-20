@@ -74,6 +74,11 @@
                             <constraint firstItem="NU3-Sz-EX9" firstAttribute="centerX" secondItem="wNb-fB-ldU" secondAttribute="centerX" id="zzB-CC-TEW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoLabel" destination="WHY-0e-wg9" id="ZRc-Ec-7p3"/>
+                        <outlet property="priceLabel" destination="r4Q-MQ-mao" id="Wsr-Jy-YkP"/>
+                        <outlet property="titleLabel" destination="NU3-Sz-EX9" id="K91-En-aRa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecP-80-SwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

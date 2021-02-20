@@ -10,8 +10,13 @@ import UIKit
 
 
 class UploadViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var priceLabel: UITextField!
+    @IBOutlet weak var photoLabel: UITextField!
+    
     let firebaseManager = FirebaseManager.shared
     let userViewModel = UserViewModel()
+    let reviewViewModel = ReviewViewModel.shared
     var placeId : String!
     
     override func viewDidLoad() {
@@ -27,6 +32,15 @@ class UploadViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func upload(_ sender: Any) {
-        firebaseManager.saveReviewsInfo(id: placeId)
-    }
+        let review = Review(reviewPhoto: "https://i.esdrop.com/d/KPfCYxMNxg.png", title: titleLabel.text!, writer: userViewModel.user.name, price: priceLabel.text!)
+        
+        firebaseManager.saveReviewsInfo(id: placeId , review: review) { response in
+            if response {
+                self.firebaseManager.loadReviewsInfo(id: self.placeId) { response in
+                    self.reviewViewModel.fetchReviews(reviews: response)
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }//response
+        }//save
+    }//upload
 }

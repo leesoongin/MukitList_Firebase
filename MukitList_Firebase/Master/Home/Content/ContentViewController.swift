@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 
 class ContentViewController: UIViewController {
     let firebaseManager = FirebaseManager.shared
-    let reviewViewModel = ReviewViewModel()
+    let reviewViewModel = ReviewViewModel.shared
     let userViewModel = UserViewModel()
     let mukitListViewModel = MukitListViewModel.shared
     
@@ -34,7 +34,8 @@ class ContentViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.collectionView.reloadData()
+       print("appear --> 나타남")
+        collectionView.reloadData()
     }
 
     @objc func loadReviewsFromFirebase(notification : NSNotification){
