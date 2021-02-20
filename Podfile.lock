@@ -104,6 +104,9 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - NMapsMap (3.10.2)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
@@ -114,6 +117,7 @@ DEPENDENCIES:
   - KakaoSDK
   - Kingfisher (~> 5.0)
   - NMapsMap
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   trunk:
@@ -141,6 +145,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - NMapsMap
+    - NVActivityIndicatorView
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -168,8 +173,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   NMapsMap: 2c092c6408c738774edea41e00f0fd1bad9e0ca9
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 1631f9285d064e641aea23c5dc97d35c58cd474b
+PODFILE CHECKSUM: e647256f5cebe248683c2c5dada46bef120c1dce
 
 COCOAPODS: 1.10.0

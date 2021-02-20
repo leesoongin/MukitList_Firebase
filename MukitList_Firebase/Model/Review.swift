@@ -15,8 +15,17 @@ struct Review : Codable{
     var writer : String
     var price : String
     
-    init(reviewPhoto : String, title : String, writer : String, price : String) {
+    var toDictionary : [String : Any] {
+        let dict = [
+            "title":self.title,
+            "writer":self.writer,
+            "reviewPhoto":self.reviewPhoto,
+            "price":self.price,
+        ]
+        return dict
+    }
     
+    init(reviewPhoto : String, title : String, writer : String, price : String) {
         self.reviewPhoto = reviewPhoto
         self.title = title
         self.writer = writer
