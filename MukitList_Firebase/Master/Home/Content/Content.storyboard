@@ -117,16 +117,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HNa-o5-lJb">
-                        <rightBarButtonItems>
-                            <barButtonItem title="이거 먹자!" id="hym-Fi-eev">
-                                <connections>
-                                    <action selector="saveMukitListToFirebase:" destination="RcX-gV-YNN" id="TQP-kd-YCH"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="나도 리뷰!" id="uv7-zq-hBr">
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="나도 리뷰!" id="uv7-zq-hBr">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="saveReviewToFirebase:" destination="RcX-gV-YNN" id="xhW-bY-KfH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="이거 먹자!" id="hym-Fi-eev">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <connections>
+                                <action selector="saveMukitListToFirebase:" destination="RcX-gV-YNN" id="TQP-kd-YCH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="fz8-UY-RSb" id="Arf-cY-eMu"/>

@@ -10,7 +10,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 class LodingViewController: UIViewController {
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     let userViewModel = UserViewModel()
     
     override func viewDidLoad() {
