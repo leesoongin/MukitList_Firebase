@@ -16,12 +16,14 @@ class UploadViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     let firebaseManager = FirebaseManager.shared
+    let firebaseStorageManager = FirebaseStorageManager.shared
     let userViewModel = UserViewModel()
     let reviewViewModel = ReviewViewModel.shared
     
     var placeId : String!
     let picker = UIImagePickerController()
-
+    var photoData : Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +59,7 @@ class UploadViewController: UIViewController {
         let review = Review(reviewPhoto: "https://i.esdrop.com/d/KPfCYxMNxg.png", title: titleLabel.text!, writer: userViewModel.user.name, price: priceLabel.text!)
         
         firebaseManager.saveReviewsInfo(id: placeId , review: review) { response in
+            self.firebaseStorageManager.uploadReviewPhoto(id: self.userViewModel.user.id, data: self.photoData)
             self.firebaseManager.loadReviewsInfo(id: self.placeId) { response in
                 self.reviewViewModel.fetchReviews(reviews: response)
                 self.dismiss(animated: true, completion: nil)
@@ -83,10 +86,9 @@ class UploadViewController: UIViewController {
 extension UploadViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            print("image -- > \(image)")
             imageView.image = image
+            photoData = image.jpegData(compressionQuality: 0.8)
         }
-        print("info --> \(info)")
         dismiss(animated: true, completion: nil)
     }
     

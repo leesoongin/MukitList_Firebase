@@ -91,6 +91,8 @@ class FirebaseManager {
             do{
                 let jsonData = try JSONSerialization.data(withJSONObject: mukitList, options: [])
                 let json = try JSONDecoder().decode([Document].self, from: jsonData)
+                
+                completion(json)
             }catch let error{
                 print("parsed error --> \(error.localizedDescription)")
             }

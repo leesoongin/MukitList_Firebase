@@ -8,6 +8,7 @@ target 'MukitList_Firebase' do
   # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 pod 'Alamofire', '~> 5.2'
 pod 'NMapsMap'
 pod 'KakaoSDK'

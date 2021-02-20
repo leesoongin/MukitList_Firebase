@@ -43,6 +43,7 @@
 		A8D91ECC25D933EA00139504 /* KeywordParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91ECB25D933EA00139504 /* KeywordParameter.swift */; };
 		A8EFFFBA25E0D020006F0DCD /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EFFFB925E0D020006F0DCD /* UploadViewController.swift */; };
 		A8EFFFBE25E0D02C006F0DCD /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EFFFBD25E0D02C006F0DCD /* Upload.storyboard */; };
+		A8EFFFC225E0F4AA006F0DCD /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EFFFC125E0F4AA006F0DCD /* FirebaseStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		A8D91ECB25D933EA00139504 /* KeywordParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordParameter.swift; sourceTree = "<group>"; };
 		A8EFFFB925E0D020006F0DCD /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A8EFFFBD25E0D02C006F0DCD /* Upload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
+		A8EFFFC125E0F4AA006F0DCD /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		AF19B7C517F18471835FFA21 /* Pods-MukitList_Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MukitList_Firebase.release.xcconfig"; path = "Target Support Files/Pods-MukitList_Firebase/Pods-MukitList_Firebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A86EB05425DA80E40044D870 /* FirebaseManager.swift */,
+				A8EFFFC125E0F4AA006F0DCD /* FirebaseStorageManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				A882227025D7E181006E3DAC /* MapViewController.swift in Sources */,
 				A8D91EBE25D918D100139504 /* SearchCell.swift in Sources */,
 				A86EB05525DA80E40044D870 /* FirebaseManager.swift in Sources */,
+				A8EFFFC225E0F4AA006F0DCD /* FirebaseStorageManager.swift in Sources */,
 				A8690FBE25D67E9A0089E3CC /* LoginViewController.swift in Sources */,
 				A86EB07B25DA8DCB0044D870 /* ReviewCell.swift in Sources */,
 				A86EB08525DA94EA0044D870 /* ReviewViewModel.swift in Sources */,

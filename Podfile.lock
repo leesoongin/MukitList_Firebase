@@ -10,6 +10,9 @@ PODS:
   - Firebase/Database (7.5.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 7.5.0)
+  - Firebase/Storage (7.5.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 7.5.0)
   - FirebaseAnalytics (7.5.0):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
@@ -36,6 +39,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseStorage (7.5.0):
+    - FirebaseCore (~> 7.0)
+    - GTMSessionFetcher/Core (~> 1.4)
   - FloatingPanel (2.2.0)
   - GoogleAppMeasurement (7.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
@@ -64,6 +70,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.2.0):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.5.0)
   - KakaoSDK (2.3.2):
     - KakaoSDKAuth (= 2.3.2)
     - KakaoSDKCommon (= 2.3.2)
@@ -113,6 +120,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Firebase/Analytics
   - Firebase/Database
+  - Firebase/Storage
   - FloatingPanel
   - KakaoSDK
   - Kingfisher (~> 5.0)
@@ -128,10 +136,12 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
     - FirebaseInstallations
+    - FirebaseStorage
     - FloatingPanel
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - GTMSessionFetcher
     - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCommon
@@ -156,10 +166,12 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 35685db68b11fe7d19d2d8b557fd7e3a56ac81cc
   FirebaseDatabase: ee59c5f39e49dfa6c06af6f4e541a88d9271625a
   FirebaseInstallations: a46ae59915f0931e18814164849cd0354bea24ed
+  FirebaseStorage: 9cbdff7bdcdc8289c8efc20945fc91c1066d0b43
   FloatingPanel: 54b478292da5340317ce78afcaca88fab6f3b57e
   GoogleAppMeasurement: 65a1071e5f52f63ab03d0a4d814a54fd762d885a
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   KakaoSDK: 04d9372a3060b6480f5726022317ed7aeccc34f4
   KakaoSDKAuth: 8db7c7a0561b137477bb984bbdab2eeda7745d23
   KakaoSDKCommon: 4bb3981337921686948b7be094590f2edec5df87
@@ -176,6 +188,6 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: e647256f5cebe248683c2c5dada46bef120c1dce
+PODFILE CHECKSUM: 116e0a4427a50a87169e2349a33717b342eb62e2
 
 COCOAPODS: 1.10.0
