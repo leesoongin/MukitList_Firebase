@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E7o-ME-Zbo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RcX-gV-YNN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,32 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation View Controller-->
-        <scene sceneID="Ff5-Zd-cCp">
-            <objects>
-                <navigationController storyboardIdentifier="Content" id="E7o-ME-Zbo" customClass="NavigationViewController" customModule="MukitList_Firebase" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1fo-ig-OsV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="RcX-gV-YNN" kind="relationship" relationship="rootViewController" id="fGR-I8-Pna"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cbe-oC-qrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-346" y="168"/>
-        </scene>
         <!--Content View Controller-->
         <scene sceneID="Kl1-bI-tGq">
             <objects>
-                <viewController id="RcX-gV-YNN" customClass="ContentViewController" customModule="MukitList_Firebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Content" id="RcX-gV-YNN" customClass="ContentViewController" customModule="MukitList_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o91-sH-yjz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-UY-RSb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="733"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RzW-dg-TxN">
                                     <size key="itemSize" width="382" height="254.59999999999999"/>
@@ -106,37 +90,68 @@
                                     <outlet property="delegate" destination="RcX-gV-YNN" id="nJC-rv-AFR"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QjG-6K-Vph">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-M3-bEL">
+                                        <rect key="frame" x="337" y="34" width="61" height="30"/>
+                                        <state key="normal" title="나도 리뷰!">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveReviewToFirebase:" destination="RcX-gV-YNN" eventType="touchUpInside" id="nsX-Fu-3Fv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-Ls-Qke">
+                                        <rect key="frame" x="16" y="34" width="61" height="30"/>
+                                        <state key="normal" title="이거 먹자!">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveMukitListToFirebase:" destination="RcX-gV-YNN" eventType="touchUpInside" id="W0k-dN-g1G"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuL-To-6Jp">
+                                        <rect key="frame" x="186" y="38.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Hf9-Ls-Qke" secondAttribute="bottom" constant="16" id="Hmx-xu-bqF"/>
+                                    <constraint firstItem="vuL-To-6Jp" firstAttribute="centerX" secondItem="QjG-6K-Vph" secondAttribute="centerX" id="JCn-nY-xCK"/>
+                                    <constraint firstAttribute="bottom" secondItem="jgR-M3-bEL" secondAttribute="bottom" constant="16" id="KHx-Pg-OPb"/>
+                                    <constraint firstItem="Hf9-Ls-Qke" firstAttribute="leading" secondItem="QjG-6K-Vph" secondAttribute="leading" constant="16" id="T2W-DI-26G"/>
+                                    <constraint firstItem="vuL-To-6Jp" firstAttribute="centerY" secondItem="Hf9-Ls-Qke" secondAttribute="centerY" id="VvB-1B-IsG"/>
+                                    <constraint firstAttribute="height" constant="80" id="YAL-fq-pZL"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgR-M3-bEL" secondAttribute="trailing" constant="16" id="YaT-jk-aIg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j0a-uS-699"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="j0a-uS-699" firstAttribute="trailing" secondItem="fz8-UY-RSb" secondAttribute="trailing" id="06A-Me-wdD"/>
+                            <constraint firstItem="j0a-uS-699" firstAttribute="trailing" secondItem="QjG-6K-Vph" secondAttribute="trailing" id="AlV-3l-rGq"/>
                             <constraint firstItem="j0a-uS-699" firstAttribute="bottom" secondItem="fz8-UY-RSb" secondAttribute="bottom" id="EOt-m7-Ag8"/>
                             <constraint firstItem="fz8-UY-RSb" firstAttribute="leading" secondItem="j0a-uS-699" secondAttribute="leading" id="HXW-yC-Y00"/>
-                            <constraint firstItem="fz8-UY-RSb" firstAttribute="top" secondItem="j0a-uS-699" secondAttribute="top" id="v8n-xK-Vxe"/>
+                            <constraint firstItem="fz8-UY-RSb" firstAttribute="top" secondItem="QjG-6K-Vph" secondAttribute="bottom" id="LSo-o2-5jM"/>
+                            <constraint firstItem="QjG-6K-Vph" firstAttribute="leading" secondItem="j0a-uS-699" secondAttribute="leading" id="Nau-gX-egO"/>
+                            <constraint firstItem="QjG-6K-Vph" firstAttribute="top" secondItem="o91-sH-yjz" secondAttribute="top" id="p5A-jj-X1P"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HNa-o5-lJb">
-                        <barButtonItem key="leftBarButtonItem" title="나도 리뷰!" id="uv7-zq-hBr">
-                            <color key="tintColor" systemColor="systemGreenColor"/>
-                            <connections>
-                                <action selector="saveReviewToFirebase:" destination="RcX-gV-YNN" id="xhW-bY-KfH"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="이거 먹자!" id="hym-Fi-eev">
-                            <color key="tintColor" systemColor="systemPinkColor"/>
-                            <connections>
-                                <action selector="saveMukitListToFirebase:" destination="RcX-gV-YNN" id="TQP-kd-YCH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="fz8-UY-RSb" id="Arf-cY-eMu"/>
+                        <outlet property="placeNameLabel" destination="vuL-To-6Jp" id="oxS-If-anO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vl-gk-Pbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="167"/>
+            <point key="canvasLocation" x="586.95652173913049" y="166.74107142857142"/>
         </scene>
     </scenes>
     <resources>

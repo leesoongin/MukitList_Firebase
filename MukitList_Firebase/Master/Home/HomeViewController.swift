@@ -105,7 +105,7 @@ extension HomeViewController : FloatingPanelControllerDelegate {
         fpc.delegate = self
         
         let storyboard = UIStoryboard(name: "Content", bundle: nil)
-        guard let contentVC = storyboard.instantiateInitialViewController() as? NavigationViewController else{
+        guard let contentVC = storyboard.instantiateInitialViewController() as? ContentViewController else{
             return
         }
         fpc.set(contentViewController: contentVC)

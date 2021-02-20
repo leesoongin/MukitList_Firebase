@@ -16,7 +16,8 @@ class ContentViewController: UIViewController {
     let mukitListViewModel = MukitListViewModel.shared
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var placeNameLabel: UILabel!
+    
     var document : Document!
     var indicator : NVActivityIndicatorView!
     
@@ -30,11 +31,12 @@ class ContentViewController: UIViewController {
                                                 color: .black,
                                                 padding: 0)
         self.view.addSubview(indicator)
-        
     }
-    //1. Firebase에서 해당하는 id에 있는 값들을 불러오기
-    //2. reviewViewModel에 data fetch
-    //3. collectionView에 뿌려주기
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.collectionView.reloadData()
+    }
+
     @objc func loadReviewsFromFirebase(notification : NSNotification){
         //any type -> Document 형변환안하면 못쓴다 !!
         let document = (notification.userInfo!["document"])! as! Document
@@ -42,7 +44,7 @@ class ContentViewController: UIViewController {
         firebaseManager.loadReviewsInfo(id: document.id) { response in
             self.reviewViewModel.fetchReviews(reviews: response)
             self.collectionView.reloadData()
-            self.navigationItem.title = document.place_name
+            self.placeNameLabel.text = document.place_name
             self.indicator.stopAnimating()
         }
     }
@@ -56,13 +58,12 @@ class ContentViewController: UIViewController {
     }
     
     @IBAction func saveReviewToFirebase(_ sender: Any) {
-        firebaseManager.saveReviewsInfo(id: document.id)
-        indicator.startAnimating()
-        firebaseManager.loadReviewsInfo(id: document.id) { response in
-            self.reviewViewModel.fetchReviews(reviews: response)
-            self.collectionView.reloadData()
-            self.indicator.stopAnimating()
-        }
+        let storyboard = UIStoryboard(name: "Upload", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: false, completion: nil)
+        
+        NotificationCenter.default.post(name: Notification.Name("placeId"), object: nil, userInfo: ["placeId":document.id])
     }
 }
 
