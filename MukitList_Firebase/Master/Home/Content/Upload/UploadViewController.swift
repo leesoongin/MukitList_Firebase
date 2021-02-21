@@ -59,7 +59,9 @@ class UploadViewController: UIViewController {
         let review = Review(reviewPhoto: "https://i.esdrop.com/d/KPfCYxMNxg.png", title: titleLabel.text!, writer: userViewModel.user.name, price: priceLabel.text!)
         
         firebaseManager.saveReviewsInfo(id: placeId , review: review) { response in
-            self.firebaseStorageManager.uploadReviewPhoto(id: self.userViewModel.user.id, data: self.photoData)
+            self.firebaseStorageManager.uploadReviewPhoto(id: self.userViewModel.user.id, data: self.photoData) { url in
+                    print("response data --> \(url)")
+            }
             self.firebaseManager.loadReviewsInfo(id: self.placeId) { response in
                 self.reviewViewModel.fetchReviews(reviews: response)
                 self.dismiss(animated: true, completion: nil)
