@@ -20,7 +20,7 @@ class UploadViewController: UIViewController {
     let userViewModel = UserViewModel()
     let reviewViewModel = ReviewViewModel.shared
     
-    var placeId : String!
+    var placeId : String! // placeid
     let picker = UIImagePickerController()
     var photoData : Data?
     
@@ -55,23 +55,25 @@ class UploadViewController: UIViewController {
     @IBAction func uploadCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    //1. TODO : photo upload to Firestorage
+    //2. TODO : save review info to Firebase Database
+    //3. TODO : load review info From Firebase Database
     @IBAction func upload(_ sender: Any) {
-        let review = Review(reviewPhoto: "https://i.esdrop.com/d/KPfCYxMNxg.png", title: titleLabel.text!, writer: userViewModel.user.name, price: priceLabel.text!)
-        
-        firebaseManager.saveReviewsInfo(id: placeId , review: review) { response in
-            self.firebaseStorageManager.uploadReviewPhoto(id: self.userViewModel.user.id, data: self.photoData) { url in
-                    print("response data --> \(url)")
-            }
-            self.firebaseManager.loadReviewsInfo(id: self.placeId) { response in
-                self.reviewViewModel.fetchReviews(reviews: response)
-                self.dismiss(animated: true, completion: nil)
-            }
-        } //save
+        firebaseStorageManager.uploadReviewPhoto(id: placeId, data: photoData){ url in
+            let review = Review(reviewPhoto: "\(url)", title: self.titleLabel.text!, writer: self.userViewModel.user.name, price: self.priceLabel.text!)
+                //사진 업로드 후 review정보 db에 저장
+            self.firebaseManager.saveReviewsInfo(id: self.placeId , review: review) { response in
+                //review 정보 저장 후 db에서 review정보 load
+                self.firebaseManager.loadReviewsInfo(id: self.placeId) { response in
+                    self.reviewViewModel.fetchReviews(reviews: response)
+                    self.dismiss(animated: true, completion: nil)
+                }
+            } //save
+        }
     }//upload
     
     func openLibrary(){
         picker.sourceType = .photoLibrary
-        
         present(picker, animated: false, completion: nil)
     }
 
@@ -90,8 +92,7 @@ extension UploadViewController : UIImagePickerControllerDelegate, UINavigationCo
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = image
             photoData = image.jpegData(compressionQuality: 0.8)
-        }
+          }
         dismiss(animated: true, completion: nil)
     }
-    
 }
