@@ -9,6 +9,8 @@ import UIKit
 //
 
 class ReviewViewModel {
+    static let shared = ReviewViewModel()
+    
     var reviews = [Review]() // db에서 받아온 리스트
     
     func fetchReviews(reviews : [Review]){

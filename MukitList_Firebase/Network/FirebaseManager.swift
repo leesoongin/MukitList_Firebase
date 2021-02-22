@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 
 class FirebaseManager {
+    static let shared = FirebaseManager()
+    
     let db = Database.database().reference()
 
     //유저정보 저장
@@ -32,27 +34,37 @@ class FirebaseManager {
             }
         }
     }
+    //리뷰정보 저장
+    func saveReviewsInfo(id : String,review : Review, completion : @escaping (Bool) -> (Void)){
+        guard let key = db.child("Review").child(id).childByAutoId().key else { return }
+        let childUpdates = ["/Review/\(id)/\(key)": review.toDictionary]
+        db.updateChildValues(childUpdates)
+        completion(true)
+    }
     //리뷰정보 불러오기
     func loadReviewsInfo(id : String, completion : @escaping ([Review]) -> (Void)){
         db.child("Review").child(id).observeSingleEvent(of: .value) { snapshot in
             if !snapshot.hasChildren()  {
                 //데이터가 없으면 해야할 행동
                 print("don't have review data")
-                return
-            }
-            do{
-                let jsonData = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
-                let json = try JSONDecoder().decode([Review].self, from: jsonData)
+                completion([])
+            }else{
+                let dict = snapshot.value! as? [String:Any] ?? [:]
+                var reviews = [Any]()
                 
-                completion(json)
-            }catch let error{
-                print("parsed error --> \(error.localizedDescription)")
-            }
+                for key in dict.keys {
+                    reviews.append(dict[key]!)
+                }
+                print("arr -> \(reviews)")
+                do{
+                    let jsonData = try JSONSerialization.data(withJSONObject: reviews, options: [])
+                    let json = try JSONDecoder().decode([Review].self, from: jsonData)
+                    completion(json)
+                }catch let error{
+                    print("parsed error --> \(error.localizedDescription)")
+                }
+            }//else
         }//db
-    }
-    //리뷰정보 저장
-    func saveReviewsInfo(){
-        
     }
     //먹킷리스트 저장
     func saveMukitList(id : String, document : Document){
@@ -68,18 +80,19 @@ class FirebaseManager {
             if !snapshot.hasChildren()  {
                 //데이터가 없으면 해야할 행동
                 print("don't have review data")
-                return
+                completion([])
             }
             let dict = snapshot.value! as? [String:Any] ?? [:]
-            var arr = [Any]()
+            var mukitList = [Any]()
             
             for key in dict.keys {
-                arr.append(dict[key]!)
+                mukitList.append(dict[key]!)
             }
             do{
-                let jsonData = try JSONSerialization.data(withJSONObject: arr, options: [])
+                let jsonData = try JSONSerialization.data(withJSONObject: mukitList, options: [])
                 let json = try JSONDecoder().decode([Document].self, from: jsonData)
-                print("제발 json --> \(json)")
+                
+                completion(json)
             }catch let error{
                 print("parsed error --> \(error.localizedDescription)")
             }

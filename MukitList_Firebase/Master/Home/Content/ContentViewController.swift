@@ -7,35 +7,48 @@
 
 import UIKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class ContentViewController: UIViewController {
-    let firebaseManager = FirebaseManager()
-    let reviewViewModel = ReviewViewModel()
+    let firebaseManager = FirebaseManager.shared
+    let reviewViewModel = ReviewViewModel.shared
     let userViewModel = UserViewModel()
     let mukitListViewModel = MukitListViewModel.shared
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var placeNameLabel: UILabel!
+    
     var document : Document!
+    var indicator : NVActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(loadReviewsFromFirebase), name: NSNotification.Name("restaurantId"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(fetchDocument), name: NSNotification.Name("restaurantId"), object: nil)
+        
+        indicator = NVActivityIndicatorView(frame: CGRect(x: (collectionView.bounds.width/2)-50, y: 100, width: 50, height: 50),
+                                            type: .squareSpin,
+                                                color: .black,
+                                                padding: 0)
+        self.view.addSubview(indicator)
     }
-    //1. Firebase에서 해당하는 id에 있는 값들을 불러오기
-    //2. reviewViewModel에 data fetch
-    //3. collectionView에 뿌려주기
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+       print("appear --> 나타남")
+        collectionView.reloadData()
+    }
+
     @objc func loadReviewsFromFirebase(notification : NSNotification){
         //any type -> Document 형변환안하면 못쓴다 !!
         let document = (notification.userInfo!["document"])! as! Document
-    
+        indicator.startAnimating()
         firebaseManager.loadReviewsInfo(id: document.id) { response in
             self.reviewViewModel.fetchReviews(reviews: response)
             self.collectionView.reloadData()
+            self.placeNameLabel.text = document.place_name
+            self.indicator.stopAnimating()
         }
     }
-    
     @objc func fetchDocument(notification : NSNotification){
         self.document = (notification.userInfo!["document"])! as? Document
     }
@@ -43,11 +56,16 @@ class ContentViewController: UIViewController {
     @IBAction func saveMukitListToFirebase(_ sender: Any) {
         //먹킷리스트에 추가 하기 기능 추가
         firebaseManager.saveMukitList(id : userViewModel.user.id, document : self.document)
-        firebaseManager.loadMukitList(id: userViewModel.user.id) { response in
-            //받아온 데이터 MukitListViewModel에 저장하고 화면에 뿌리기
-        }
     }
     
+    @IBAction func saveReviewToFirebase(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Upload", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: false, completion: nil)
+        
+        NotificationCenter.default.post(name: Notification.Name("placeId"), object: nil, userInfo: ["placeId":document.id])
+    }
 }
 
 extension ContentViewController : UICollectionViewDataSource {

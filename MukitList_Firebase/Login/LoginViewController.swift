@@ -13,7 +13,7 @@ import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     let userViewModel = UserViewModel()
-    let firebaseManager = FirebaseManager()
+    let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
